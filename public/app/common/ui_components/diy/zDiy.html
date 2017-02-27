@@ -1,0 +1,152 @@
+<!--{{diyTemplate}}-->
+<!--<hr/>{{diyMenuData}}<hr/>{{diySaveData}}-->
+<div style="background-color: #F6F7FB">
+<div ng-repeat="item in diyMenuData">
+    <!--组头-->
+    <div class="card" style="border-radius:6px;border: none">
+        <div style="padding-top:6px;padding-bottom:10px;background:#fff;text-align: left ;font-weight: bold;">
+            <span style="  color: #4A4A4A ; margin-left: 10px">{{diyTemplate[$index].groupName+' '}}{{item.dataContentses.length>1?'1':''}}</span>
+            <span ng-if="item.dataContentses.length>0" ng-click="delete($index,0)"
+                  style=" float: right ; color: #57B7E9 ; margin-right: 10px;font-weight: 300">删除</span>
+        </div>
+        <div style="width:100%;background-color: #DADADA;height: 1px;"></div>
+    <!--组头-->
+     <!--内容 -->
+    <div ng-repeat="dataContents in item.dataContentses">
+        <div ng-if="!$first"
+             style="padding-top:6px;padding-bottom:10px;background:#fff;text-align: left ;font-weight: bold;">
+            <span style="  color: #4A4A4A ; margin-left: 10px">{{diyTemplate[$parent.$parent.$index].groupName+' '+($index+1)}}</span>
+            <span ng-click="delete($parent.$parent.$index,$index)"
+                  style=" float: right ; color: #57B7E9 ; margin-right: 10px;font-weight: 300">删除</span>
+        </div>
+        <div ng-repeat="datas in dataContents.dataContents" style="background-color: #FAFAFA">
+            <div ng-switch=datas.type>
+                <!--如果是range-->
+                <div ng-switch-when="range">
+                    <div class="row" style="height: 25px;">
+                        <div class="col"
+                             style="text-align: left ;font-size: 13px ; color: #A4A4A4;padding:8px 0 0 12px;font-weight: 500">
+                            {{datas.name}}
+                        </div>
+                        <div ng-cloak class="col"
+                             style="text-align: center ; font-size: 17px ;font-weight: bold; color: #494949;padding-top: 8px">
+                            {{datas.step>=1?datas.value*datas.step:datas.value}}{{' '+datas.unit}}
+                        </div>
+                        <div class="col" style="text-align: right"></div>
+                    </div>
+                    <div class="row" style="height: 40px;">
+                        <i ng-click="datas.value=datas.value-1" on-release="diyRangeRelease()"
+                           on-hold="diyRangeHold($parent.$parent.$parent.$index,$parent.$parent.$index,$parent.$index,false)"
+                           class="icon ion-minus col col-10"
+                           style="color: #1fb4ff;display: block;padding-top: 3%;font-size: 1.5em;text-align: center"></i>
+
+                        <div class="col col-80 range range-calm"
+                             style="text-align: center ; font-size: 22px ; color: #998282">
+                            <z-range style="width: 100%;vertical-align: middle" z-id={{datas.$$hashKey}}
+                                     z-min="{{datas.min}}"
+                                     z-max="{{datas.max}}" z-value="datas.value"></z-range>
+                        </div>
+                        <i ng-click="datas.value=datas.value*1+1" on-release="diyRangeRelease()"
+                           on-hold="diyRangeHold($parent.$parent.$parent.$index,$parent.$parent.$index,$parent.$index,true)"
+                           class="icon ion-plus col col-10"
+                           style="color: #1fb4ff;display: block;padding-top: 3%;font-size: 1.5em;text-align: center"></i>
+                    </div>
+                    <div class="row" style="padding-bottom: 5px;">
+                        <div class="col" style="text-align: left ;font-size: 12px ; color: #A4A4A4;padding-left: 12%;">
+                            {{datas.step>=1?datas.min*datas.step:datas.min}}
+                        </div>
+                        <div class="col" style="text-align: center ; font-size: 12px; color: #A4A4A4">
+                            {{datas.step>=1
+                            ?(((datas.max-datas.min)%2)==0
+                            ?middle(datas.min,datas.max)
+                            :(datas.max-datas.min)>10
+                            ?middle(datas.min,datas.max)
+                            :'')*datas.step
+                            :(((datas.max-datas.min)%2)==0
+                            ?middle(datas.min,datas.max)
+                            :(datas.max-datas.min)>10
+                            ?middle(datas.min,datas.max)
+                            :'')}}
+                        </div>
+                        <div class="col" style="text-align: right; font-size: 12px; color: #A4A4A4;padding-right: 12%">
+                            {{datas.step>=1?datas.max*datas.step:datas.max}}
+                        </div>
+                    </div>
+                    <div style="height: 2px ; background:#ededed  "></div><!--下划线-->
+                    </div>
+                <!--如果是range-->
+                <!--如果是picker-->
+                <div ng-switch-when="picker">
+                    <div class="row" style="height: 25px;">
+                        <div class="col"
+                             style="text-align: left ;font-size: 13px ; color: #A4A4A4;padding:8px 0 0 12px;font-weight: 500">
+                            {{datas.name}}
+                        </div>
+                        <div class="col"
+                             style="text-align: center ; font-size: 17px ;font-weight: bold; color: #494949;padding-top: 8px">
+                            {{datas.options[datas.value]+datas.unit}}
+                        </div>
+                            <div class="col" style="text-align: right"></div>
+                        </div>
+                    <div style="height: 40px;padding: 0 {{100/(datas.options.length*2)}}% 0 {{100/(datas.options.length*2)}}%">
+                        <z-range z-id={{datas.$$hashKey}} z-min="0"
+                                 z-max="{{datas.options.length-1}}" z-value="datas.value"></z-range>
+                        </div>
+                    <div class="row" style="padding: 0 10px 5px 10px">
+                            <!--左右靠边选项-->
+                            <!--<div ng-if="datas.options.length<4" ng-repeat="option in datas.options" class="col"-->
+                                 <!--style="text-align:{{$first?'left':$last?'right':'center'}} ;font-size: 12px ; color: #A4A4A4">-->
+                                <!--{{option}}-->
+                            <!--</div>-->
+                            <div ng-repeat="option in datas.options" class="col"
+                                 style="text-align:center ;font-size: 12px ; color: #A4A4A4">{{option}}
+                            </div>
+                        </div>
+                        <div style="height: 2px ; background:#ededed  "></div><!--下划线-->
+                </div>
+                <!--如果是picker-->
+                <!--如果是select-->
+                <div ng-switch-when="select">
+                    <z-pick z-id={{datas.$$hashKey}} z-array="datas.options" z-value="datas.value"></z-pick>
+                    <div style="height: 2px ; background:#ededed  "></div>
+                    <!--下划线-->
+                </div>
+                <!--如果是select-->
+                <div ng-switch-default></div>
+            </div>
+        </div>
+    </div>
+    <!--内容 -->
+
+        <!--组尾-->
+        <div ng-if="diyMenuData[$index].dataContentses.length<diyTemplate[$index].maxCount"
+             style="padding-top:7px;padding-bottom:9px;background:#fff;text-align: center"
+             ng-click="add($index)">
+            <span style="color: #4EB4FD;"> 添加{{diyTemplate[$index].groupName}}</span>
+        </div>
+        <!--组尾-->
+    </div>
+
+
+</div>
+</div>
+
+
+<script id="my-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title" style="text-align:center">{{diyTemplate[modalIndex].groupName}}</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ul class="list">
+                <li class="item" ng-click="optionSelect($index)"
+                    ng-repeat="option in diyTemplate[modalIndex].template.templateOptions">
+                    {{option.data[0].name}}
+                </li>
+            </ul>
+        </ion-content>
+        <div class="bar bar-footer bar-assertive" ng-click="closeModal()">
+            <div class="title">返回</div>
+        </div>
+    </ion-modal-view>
+</script>

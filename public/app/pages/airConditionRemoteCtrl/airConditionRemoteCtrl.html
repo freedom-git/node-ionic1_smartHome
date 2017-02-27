@@ -1,0 +1,30 @@
+<ion-view ng-cloak id="airConditionRemoteCtrl">
+
+
+    <ion-content
+            padding="false"
+            has-bouncing="false"
+            scrollbar-y="false"
+            scrollbar-x="false"
+            direction="y">
+        <div class="remoteContentScreen">
+            <p class="temperatureText">{{resourceService.deviceStatus.airConditioner.settingTem}}</p>
+            <p class="logo">FREEDOM</p>
+            <i class="icon ion-power power-switch" ng-click="power_switch_click()" ng-class="{true:'on',false:''}[resourceService.airCtrl.temperature.airConditioningStatus=='on']"></i>
+            <i class="icon ion-chevron-up addTemperature" ng-click="addTemperature()"></i>
+            <i class="icon ion-chevron-down reduceTemperature" ng-click="reduceTemperature()"></i>
+            <i class="icon ion-ios-snowy coldMode" ng-click="coldMode()" ng-class="{true:'on',false:''}[resourceService.deviceStatus.airConditioner.mode=='coldMode']"></i>
+            <i class="icon ion-flag windMode" ng-click="windMode()" ng-class="{true:'on',false:''}[resourceService.deviceStatus.airConditioner.mode=='windMode']"></i>
+            <i class="icon ion-waterdrop reduceHumidityMode" ng-click="reduceHumidityMode()" ng-class="{true:'on',false:''}[resourceService.deviceStatus.airConditioner.mode=='reduceHumidityMode']"></i>
+            <i class="icon ion-bonfire heatMode" ng-click="heatMode()" ng-class="{true:'on',false:''}[resourceService.deviceStatus.airConditioner.mode=='heatMode']"></i>
+            <i class="icon ion-arrow-down-c windDirection" ng-click="windDirection()"></i>
+            <i class="icon ion-loop windDirectionAuto" ng-click="windDirectionAuto()" ng-class="{true:'on',false:''}[resourceService.deviceStatus.airConditioner.windAutoDirection]"></i>
+            <i class="icon ion-android-star-outline wind1" ng-click="wind1()" ng-class="{true:'on',false:''}[resourceService.deviceStatus.airConditioner.windGrade==1]"></i>
+            <i class="icon ion-android-star-half wind2" ng-click="wind2()" ng-class="{true:'on',false:''}[resourceService.deviceStatus.airConditioner.windGrade==2]"></i>
+            <i class="icon ion-android-star wind3" ng-click="wind3()" ng-class="{true:'on',false:''}[resourceService.deviceStatus.airConditioner.windGrade==3]"></i>
+        </div>
+
+
+    </ion-content>
+
+</ion-view>

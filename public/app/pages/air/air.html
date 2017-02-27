@@ -1,0 +1,32 @@
+<ion-view ng-cloak id="air">
+
+
+    <ion-content
+            padding="false"
+            has-bouncing="true"
+            scrollbar-y="false"
+            scrollbar-x="false"
+            direction="y">
+
+        <div class="outLine" on-hold="onHold('temperature')" ng-click="onClick('temperature')">
+            <p class="mainText">{{resourceService.airCtrl.temperature.value}}<span>℃</span></p>
+
+            <p class="subText">室外温度：{{resourceService.weather.now.tmp}} ℃</p>
+
+            <p class="subText">自动控温：{{resourceService.airCtrl.temperature.autoCtrlStatus?resourceService.airCtrl.temperature.lowerLimit+'℃-'+resourceService.airCtrl.temperature.upperLimit+'℃':'OFF'}}</p>
+            <i class="icon ion-ios-snowy" ng-class="{true:'freedomCssComponents-spin',false:''}[resourceService.airCtrl.temperature.airConditioningStatus=='on']"></i>
+        </div>
+
+        <div class="outLine humidity" on-hold="onHold('humidity')" ng-click="onClick('humidity')">
+            <p class="mainText">{{resourceService.airCtrl.humidity.value}}<span>%</span></p>
+
+            <p class="subText">室外湿度：{{resourceService.weather.now.hum}} %</p>
+
+            <p class="subText">自动控湿：OFF</p>
+            <i class="icon ion-waterdrop"></i>
+        </div>
+
+
+    </ion-content>
+
+</ion-view>

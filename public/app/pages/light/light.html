@@ -1,0 +1,21 @@
+<ion-view ng-cloak id="light">
+
+
+    <ion-content
+            padding="false"
+            has-bouncing="true"
+            scrollbar-y="false"
+            scrollbar-x="false"
+            direction="y">
+
+        <div class="itemContent">
+            <div ng-repeat="item in items" class="itemButton"  ng-click="itemClick(item)">
+                <p>{{item.text}}</p>
+                <img src="images/on.jpg" ng-if="item.status=='on'">
+                <img src="images/off.jpg" ng-if="item.status=='off'">
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

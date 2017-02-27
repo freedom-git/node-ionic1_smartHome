@@ -1,0 +1,14 @@
+{
+  "name": "newFramworks",
+  "description": "newFramworks",
+  "version": "0.0.1",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "ionic.bundle.min": "http://cdn.bootcss.com/ionic/1.1.0/js/ionic.bundle.min.js"
+  }
+}

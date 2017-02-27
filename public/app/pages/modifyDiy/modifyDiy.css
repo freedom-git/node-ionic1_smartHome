@@ -1,0 +1,21 @@
+.modifyDiyContent {
+    background-color: #F6F7FB;
+}
+/*footer bar */
+.modifyDiyButton .bar {
+    padding: 0!important;
+}
+.modifyDiyButton .button-bar .button {
+    font-size: 1em;
+    padding: 5px 16px!important;
+    border-color: #1FB4FF!important;
+    background-color: #1FB4FF!important;
+    border-left-color:#fff!important;
+
+}
+.modifyDiyButton .button-bar .button:first-of-type{
+    border-left-color:#11c1f3!important;
+}
+.modifyDiyInnerBox {
+    padding-bottom: 15px;
+}

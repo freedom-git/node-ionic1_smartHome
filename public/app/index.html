@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="app"  ng-controller="InitCtrl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>智能家居系统</title>
+    <!--<script src="common/function_components/initViewPoint/initViewPoint.js"></script>-->
+    <link href="common/lib/ionic.min.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet">
+    <script src="common/lib/socket.io.js"></script>
+</head>
+
+<body>
+
+<!--加载初始化页面-->
+<div class="m-app-loading">
+
+    <!--
+        HACKY CODE WARNING: I'm putting Style block inside directive so that it
+        will be removed from the DOM when we remove the directive container.
+    -->
+    <style type="text/css">
+        div.m-app-loading {
+            position: fixed ;
+        }
+        div.m-app-loading div.animated-container {
+            background-color: #333333 ;
+            bottom: 0px ;
+            left: 0px ;
+            opacity: 1.0 ;
+            position: fixed ;
+            right: 0px ;
+            top: 0px ;
+            z-index: 999999 ;
+        }
+        /* Used to initialize the ng-leave animation state. */
+        div.m-app-loading div.animated-container.ng-leave {
+            opacity: 1.0 ;
+            transition: all linear 200ms ;
+            -webkit-transition: all linear 200ms ;
+        }
+        /* Used to set the end properties of the ng-leave animation state. */
+        div.m-app-loading div.animated-container.ng-leave-active {
+            opacity: 0 ;
+        }
+        div.m-app-loading div.messaging {
+            color: #FFFFFF ;
+            font-family: monospace ;
+            left: 0px ;
+            margin-top: -37px ;
+            position: absolute ;
+            right: 0px ;
+            text-align: center ;
+            top: 50% ;
+        }
+        div.m-app-loading h1 {
+            color: white;
+            font-size: 26px ;
+            line-height: 35px ;
+            margin: 0px 0px 20px 0px ;
+        }
+        div.m-app-loading p {
+            font-size: 18px ;
+            line-height: 14px ;
+            margin: 0px 0px 0px 0px ;
+        }
+    </style>
+
+
+    <!-- BEGIN: Actual animated container. -->
+    <div class="animated-container" ng-class="{'ng-leave-active':!mainService.preparingPage.preparing}">
+
+        <div class="messaging">
+
+            <h1 ng-bind="mainService.preparingPage.mainMessage">
+                应用正在加载
+            </h1>
+
+            <p ng-bind="mainService.preparingPage.subMessage">
+                愿得一心人 白头不相离
+            </p>
+
+        </div>
+
+    </div>
+    <!-- END: Actual animated container. -->
+
+</div>
+<!--加载初始化页面-->
+
+<!--页面容器-->
+<div ng-class="{'go-away':mainService.preparingPage.preparing}">
+<ion-nav-view></ion-nav-view>
+</div>
+
+
+
+
+
+<script src="common/lib/ionic.bundle.min.js"></script>
+<script src="common/function_components/httpModule/httpModule.js"></script>
+<script src="app.js"></script>
+
+
+<!--page reference-->
+<script src="pages/index/index.js"></script>
+<script src="pages/air/air.js"></script>
+<script src="pages/music/music.js"></script>
+<script src="pages/modifyDiy/modifyDiy.js"></script>
+<script src="pages/light/light.js"></script>
+<script src="pages/airConditionRemoteCtrl/airConditionRemoteCtrl.js"></script>
+
+<!--service reference-->
+<script src="scripts/services/mainService.js"></script>
+<!--获得地点，饭煲开启-->
+
+
+<script src="scripts/services/configService/configService_cooker.js"></script>
+<script src="scripts/services/resourceServices/resourceService_online.js"></script>
+<script src="scripts/services/routerManageService.js"></script>
+<script src="scripts/services/toolService.js"></script>
+
+<!--filters reference-->
+<script src="scripts/filter/filters.js"></script>
+
+<!--directive reference-->
+<script src="common/function_components/httpModule/httpModule.js"></script>
+<script src="common/ui_components/header/header.js"></script>
+<link href="common/ui_components/header/header.css" rel="stylesheet">
+<script src="common/ui_components/menuList/menuList.js"></script>
+<link href="common/ui_components/menuList/menuList.css" rel="stylesheet">
+<script src="common/ui_components/range/z-range.js"></script>
+<script src="common/ui_components/diy/zDiy.js"></script>
+<script src="common/ui_components/detailRange/detailRange.js"></script>
+<script src="common/ui_components/detailPicker/detailPicker.js"></script>
+<script src="common/ui_components/timePicker/timePicker.js"></script>
+<link href="common/ui_components/timePicker/timePicker.css" rel="stylesheet">
+<script src="common/ui_components/workProcess/workProcess.js"></script>
+</body>
+</html>

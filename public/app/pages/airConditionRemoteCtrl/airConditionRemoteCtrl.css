@@ -1,0 +1,128 @@
+#airConditionRemoteCtrl {
+    background-color: #2b343b;
+    background-image: url("../../images/airControllerBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#airConditionRemoteCtrl .remoteContentScreen {
+    width: 49.375vw;
+    height: 45vw;
+    position: absolute;
+    top: 11.875vw;
+    left: 26.25vw;
+    border-radius: 1.5625vw;
+    text-align: center;
+    /* opacity: 0.4; */
+}
+#airConditionRemoteCtrl .remoteContentScreen p.temperatureText {
+    color: #a9a9a9;
+    margin-top: 14vw;
+    font-size: 7.8125vw;
+    font-family: sans-serif;
+}
+#airConditionRemoteCtrl .remoteContentScreen p.logo {
+    color: #a9a9a9;
+    font-size: 4vw;
+    font-family: fantasy;
+    position: absolute;
+    bottom: 1vw;
+    right: 6vw;
+    letter-spacing: 0.2vw;
+}
+#airConditionRemoteCtrl .remoteContentScreen .power-switch {
+    position: absolute;
+    top: 87vw;
+    font-size: 6vw;
+    left: 22.5vw;
+    color: #a9a9a9;
+}
+#airConditionRemoteCtrl .remoteContentScreen .icon.on {
+    color:#0adad3;
+}
+#airConditionRemoteCtrl .remoteContentScreen .addTemperature {
+    position: absolute;
+    top: 70vw;
+    font-size: 6vw;
+    left: 22.5vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .reduceTemperature {
+    position: absolute;
+    top: 104vw;
+    font-size: 6vw;
+    left: 22.5vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .coldMode {
+    position: absolute;
+    top: 70vw;
+    font-size: 7vw;
+    left: 8vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .windMode {
+    position: absolute;
+    top: 70vw;
+    font-size: 5vw;
+    left: 38vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .reduceHumidityMode {
+    position: absolute;
+    top: 87vw;
+    font-size: 5.25vw;
+    left: 8vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .heatMode {
+    position: absolute;
+    top: 87vw;
+    font-size: 5.43vw;
+    left: 38vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .windDirection {
+    position: absolute;
+    top: 104vw;
+    font-size: 5.7vw;
+    left: 8vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .windDirectionAuto {
+    position: absolute;
+    top: 104vw;
+    font-size: 5.43vw;
+    left: 38vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .wind1 {
+    position: absolute;
+    top: 125vw;
+    font-size: 5.43vw;
+    left: 8vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .wind2 {
+    position: absolute;
+    top: 125vw;
+    font-size: 5.43vw;
+    left: 22.5vw;
+    color: #a9a9a9;
+}
+
+#airConditionRemoteCtrl .remoteContentScreen .wind3 {
+    position: absolute;
+    top: 125vw;
+    font-size: 5.43vw;
+    left: 38vw;
+    color: #a9a9a9;
+}

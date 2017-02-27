@@ -1,0 +1,21 @@
+# npm files
+node_modules/
+public/node_modules/
+
+# bower files
+bower_components/
+public/bower_components/
+
+# build files
+build/
+upload/
+deploy/
+
+# webstorm files
+.idea
+
+# gulp gen files
+
+
+# others
+.DS_Store

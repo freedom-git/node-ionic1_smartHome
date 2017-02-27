@@ -1,0 +1,66 @@
+
+<ion-view class="timePickerBody" ng-show="show">
+    <div class="timePickerDialog" >
+        <div id="hourWrapper" class="hourWrapperClass toggle-{{timePickerItems.length}}">
+            <ul>
+                <li class="fBase">22</li>
+                <li class="fBase">23</li>
+                <li class="fBase" ng-repeat="hour in hours track by $index" ng-class="{false:'',true:'select'}[indexH=={{hour}}]">{{hour}}</li>
+                <li class="fBase">0</li>
+                <li class="fBase">1</li>
+            </ul>
+        </div>
+        <div id="minuteWrapper" class="minuteWrapperClass toggle-{{timePickerItems.length}}">
+            <ul>
+                <li class="fBase">58</li>
+                <li class="fBase">59</li>
+                <li class="fBase" ng-repeat="Minu in Minus track by $index" ng-class="{false:'',true:'select'}[indexM=={{Minu}}]">{{Minu}}</li>
+                <li class="fBase">0</li>
+                <li class="fBase">1</li>
+            </ul>
+        </div>
+        <div class="headerMark" ></div>
+        <div class="footerMark"></div>
+        <table style="text-align: center ;width: 100%">
+            <tr >
+                <td colspan="4" align="center" height="126px">
+                    <span class="icon ion-ios-clock" ></span>
+                    <!--<img ng-src="images/listAppointment.png" style="margin-top: 10px;margin-bottom: 5px;width: 80px ">-->
+                    <p style="font-size: 1em ;color: #9B9B9B">{{timePickerDialogSubTitle}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td  colspan="4" >
+                    <ul class="list">
+                        <li class="item item-toggle" ng-repeat="item in timePickerItems">
+                            和“{{item.info}}”一起结束
+                            <label class="toggle toggle-calm">
+                                <input type="checkbox" ng-change="appointmentCheckBoxChange(item ,appointmentCheckBoxVal)" ng-model="appointmentCheckBoxVal">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr style="background-color: white;height: 150px;">
+                <td style="width: 25%;text-align: center">
+                    <div ng-if="isTomorrow" style="display:block;position: absolute;bottom: 60px;left: 3%;font-size: 1.2em;color:#bcbcbc" >明天</div>
+                </td>
+                <td style="width: 25%;line-height: 150px;font-size: 1.4em;color: #4A4A4A">时</td>
+                <td style="width: 25%;text-align: center">
+                </td>
+                <td style="width: 25%;line-height: 150px;font-size: 1.4em;color: #4A4A4A">分</td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div class="button-bar bar-stable" >
+                        <a class="button blue" ng-click="timePickerOkClick()">确定</a>
+                        <a class="button blue" ng-click="timePickerResetlClick()">取消</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</ion-view>

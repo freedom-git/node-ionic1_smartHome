@@ -1,0 +1,45 @@
+#air {
+    background-color: #2b343b;
+}
+#air .outLine {
+    width: 90vw;
+    height: 34vw;
+    background: linear-gradient(180deg, #fe9551 0%,  #fe635f 100%);
+    margin: 5vw auto 0 auto;
+    }
+#air .outLine .mainText {
+    padding: 5vw 0 0 5vw;
+    line-height: 10vw;
+    font-size: 16vw;
+    color: #f4e9ea;
+    margin-bottom: 0;
+}
+#air .outLine .mainText span {
+    position: relative;
+    font-size: 7vw;
+    top: -7vw;
+    left: 1vw;
+}
+#air .outLine .subText {
+    padding: 0 0 0 5vw;
+    line-height: 6vw;
+    font-size: 4vw;
+    color: #f4e9ea;
+    margin-bottom: 0;
+}
+#air .outLine i {
+    font-size: 35vw;
+    float: right;
+    position: relative;
+    top: -31.5vw;
+    right: 6vw;
+    color: #f4e9ea;
+}
+#air .outLine.humidity {
+    background: linear-gradient(180deg, #40cff2 0%, #52a7f6 100%);
+}
+#air .outLine.humidity i {
+    font-size: 22vw;
+    right: 8vw;
+    top: -24vw;
+}

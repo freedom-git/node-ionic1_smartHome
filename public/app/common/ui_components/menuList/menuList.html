@@ -1,0 +1,27 @@
+<div class="favoriteMenu">
+    <div class="col col-33" ng-repeat="menuItem in menuList | orderBy:'priorityNum'" style="float:left">
+        <div class="card" ng-click="menuClickFunction()(menuItem)"
+             ng-class="{true:'select',false:''}[menuItem.menuId == menusSelectId]">
+
+            <!-- 菜的 ico-->
+            <img ng-src="{{menuItem.menuType}}"  class="menuItemImgInLine" image-lazy-distance-from-bottom-to-load="100"/>
+
+            <!-- 普通的 菜 的外包围-->
+            <img ng-src="images/menuPicSaucer.png"
+                 ng-if="!menuItem.isDiy&&!menuItem.isFavorite"
+                 class="menuItemImgOutLine">
+
+            <!-- 最爱的 菜 的外包围--->
+            <img ng-src="images/menuFavoritesSaucer.png" ng-if="menuItem.isFavorite"
+                 class="menuItemImgOutLine">
+
+            <!-- DIY的 菜 的外包围--->
+            <img ng-src="images/menuDiySaucer.png"
+                 ng-if="menuItem.isDiy&&!menuItem.isFavorite"
+                 class="menuItemImgOutLine">
+
+            <!-- 菜的 名字-->
+            <p>{{menuItem.menuText}}</p>
+        </div>
+    </div>
+</div>

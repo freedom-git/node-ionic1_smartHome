@@ -1,0 +1,45 @@
+<div ng-class="{'card':hasCard}">
+<div class="row" style="height: 25px;">
+    <div class="col"
+         style="text-align: left ;font-size: 14px ; color: #A4A4A4;padding:8px 0 0 8px;">
+        {{name}}
+    </div>
+    <div class="col"
+         style="text-align: center ; font-size: 17px ;font-weight: bold; color: #494949;padding-top: 8px">
+        {{value+' '+unit}}
+    </div>
+    <div class="col" style="text-align: right"></div>
+</div>
+
+<div class="row" style="height: 40px;vertical-align: middle">
+    <i ng-click="value=value-1"
+       on-release="detailRangeRelease()"
+       on-hold="detailRangeHold(false)"
+       class="icon ion-minus col col-10"
+       style="color: #1fb4ff;font-size: 1.5em;padding-left:3%;padding-right: 3%;
+       position: relative;top: 30%"></i>
+
+    <div class="col col-80 range range-calm"
+         style="text-align: center ; font-size: 22px ; color: #998282">
+        <z-range style="width: 100%;vertical-align: middle" z-id="{{name+id}}"
+                 z-min="{{min}}"
+                 z-max="{{max}}" z-value="value" z-step={{angular.isDefined(step)?step:1}}></z-range>
+    </div>
+    <i ng-click="value=value*1+1"
+       on-release="detailRangeRelease()"
+       on-hold="detailRangeHold(true)"
+       class="icon ion-plus col col-10"
+       style="color: #1fb4ff;font-size: 1.5em;padding-left: 3%; position: relative;top: 30%"></i>
+</div>
+<div class="row" style="padding-bottom: 5px;padding-top: 2px">
+    <div class="col" style="text-align: left ;font-size: 12px ; color: #A4A4A4;padding-left: 12%;">
+        {{min}}
+    </div>
+    <div class="col" style="text-align: center ; font-size: 12px; color: #A4A4A4">
+        {{((max-min)%2)==0?middle(min,max):(max-min)>10?middle(min,max):''}}
+    </div>
+    <div class="col" style="text-align: right; font-size: 12px; color: #A4A4A4;padding-right: 12%">
+        {{max}}
+    </div>
+</div>
+</div>

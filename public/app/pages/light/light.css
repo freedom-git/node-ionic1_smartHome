@@ -1,0 +1,31 @@
+#light {
+    background-color: #101415;
+}
+#light .itemContent {
+
+}
+#light .itemButton {
+    box-sizing: border-box;
+    width: 50vw;
+    height: 75vw;
+    border-top: solid #101415 4px;
+    display: inline-block;
+    float: left;
+    border-right: solid #101415 2px;
+    background-size: contain;
+    text-align: center;
+    background-image: url(../../images/lightBackground.jpg);
+}
+#light .itemButton:nth-child(2n) {
+    border-left: solid #101415 2px;
+    border-right: none;
+}
+#light .itemButton p {
+    color: #b9bcc3;
+    font-size: 5vw;
+    margin-top: 8vw;
+}
+#light .itemButton img {
+    width: 50%;
+    margin-top: 4vw;
+}

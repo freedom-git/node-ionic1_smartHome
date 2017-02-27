@@ -1,0 +1,30 @@
+<ion-view ng-cloak class="cookDetail">
+    <ion-content
+            class="has-footer modifyDiyContent"
+            padding="false"
+            has-bouncing="true"
+            scrollbar-y="false"
+            scrollbar-x="false"
+            direction="y"
+            delegate-handle="modifyDiyContent">
+
+    </ion-content>
+    <div class="modifyDiyButton">
+        <div class="bar bar-footer bar-calm">
+            <div class="button-bar">
+                <a ng-repeat="button in modifyDiyCtrl.buttonBar" class="button"
+                   ng-click="button.fun()"><i class="{{button.icon}}"></i> &nbsp;{{button.text}}</a>
+            </div>
+        </div>
+    </div>
+</ion-view>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+.header .svgBase {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    height: 140px;
+    /*stroke-dasharray: 1%, 300%;*/
+    stroke-dashoffset: 0%;
+    stroke: #ffffff;
+    /*stroke-linecap:round;*/
+    fill: none;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.header {
+    /*margin-top: 20px;*/
+    /*margin-bottom: 30px;*/
+    width: 100%;
+    height: 140px;
+    position: relative;
+    margin-bottom: 0;
+    overflow: hidden;
+    /*TODO change URL of the image*/
+    background: url("../../../images/circle-bg.svg") no-repeat;
+}
+
+.header p {
+    text-align: center;
+    position: absolute;
+    margin-bottom: 2px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    font-size: 1em;
+    font-weight: 600
+}
+
+.productIcon {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    /*border: solid 14px #ffffff;*/
+    border-radius: 50%;
+    /*background-color: #21b4ff;*/
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+
+}
+
+.productIcon img {
+    width: 100px;
+    height: 100px;
+}

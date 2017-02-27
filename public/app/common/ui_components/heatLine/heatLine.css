@@ -1,0 +1,163 @@
+
+/*---total------------------------------------------------*/
+.heat-line{
+    background-color: #F7FCFF;
+}
+
+/*---标题------------------------------------------------*/
+.heat-line .title{
+    padding: 5px 5px 10px 19px;
+    font-size: 0.9em;
+    /*border: 1px solid blue;*/
+    text-align: left;
+    color: #A4A8AB;
+}
+
+/*---工作阶段------------------------------------------------*/
+.heat-line .stages{
+    /*border: 1px solid blue;*/
+
+    margin: 0 0 0 0;
+    padding: 0 17px 0 18px!important;
+    /*height: 48px;*/
+    text-align:center;
+    color: #ffffff;
+    /*font-weight: normal;*/
+}
+.heat-line .stage{
+    line-height: 24px;
+    /*border: 1px solid black;*/
+    padding: 6px;
+}
+
+.heat-line .stage:nth-child(1) {
+    /*color: #000000;*/
+    border-top-left-radius: 5px;
+}
+
+.heat-line .stage:nth-child(5) {
+    /*color: #000000;*/
+    border-top-right-radius: 5px;
+}
+.stage.working{
+    background-color: #C7EBF9;
+    /*background-color: #B6E5FF;*/
+}
+.stage.wait{
+    background-color: #EFEEF4;
+}
+.stage.finish{
+    background-color: #C7EBF9;
+}
+/*---曲线图例------------------------------------------------*/
+.hl_foot{
+    /*border: 1px solid black;*/
+    position:relative;
+    margin-top: 30px;
+}
+
+.legends{
+    /*border: 1px solid red;*/
+    /*text-align:center;*/
+    height: 48px;
+    padding: 0px;
+}
+.legends .optimize{
+
+    /*border: 1px solid black;*/
+}
+.legends .normal{
+    /*border: 1px solid black;*/
+}
+
+.legends .optimize .legend{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+
+    position:absolute;
+    left: 15%;
+    border: 3px solid #0273FC;
+    background-color: transparent;
+}
+
+.legends .normal .legend{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+
+    position:absolute;
+    left: 65%;
+
+    border: 3px solid #C3C4C6;
+    background-color: transparent;
+}
+.legends .optimize .text{
+    display: inline-block;
+    position:absolute;
+    left: 25%;
+    top:9%;
+    font-size: 1.2em;
+}
+
+.legends .normal .text{
+    display: inline-block;
+    position:absolute;
+    left: 75%;
+    top:9%;
+    font-size: 1.2em;
+}
+/*---说明------------------------------------------------*/
+.explain{
+    padding: 0 15px 0 15px;
+    /*border: 1px solid blue;*/
+    /*position: relative;*/
+}
+
+.explain .row {
+    padding: 0px;
+}
+.explain .box{
+    font-size: 1.0em;
+    color: white;
+
+    /*background: -webkit-gradient(linear,0% 0%, 0% 100%, from(#B5BEC5), to(#98A6AE), color-stop(0.6,#B4BDC4));*/
+    /*background: -webkit-linear-gradient(to bottom,#B5BEC5 0%, #B4BDC4 60%, #98A6AE 100%);*/
+    /*background: -o-linear-gradient(to bottom,#B5BEC5 0%, #B4BDC4 60%, #98A6AE 100%);*/
+    /*background: -moz-linear-gradient(to bottom,#B5BEC5 0%, #B4BDC4 60%, #98A6AE 100%);*/
+    /*background: linear-gradient(to bottom,#B5BEC5 0%, #B4BDC4 60%, #98A6AE 100%);*/
+    /*border: 1px solid transparent;*/
+    background-color: #DDE2E5;
+    border-radius: 5px;
+    padding-top: 15px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+.explain .box p {
+    /*line-height: 1.1em;*/
+}
+.explain .triangle{
+    width:0;
+    height:0;
+    font-size:0;
+
+    /*因为边框没有宽度和高度，因此只有边框宽度*/
+    border-width:15px;
+    border-style:solid;
+
+    /*设置4条边框边的颜色，一旦设置为透明色，就相当于少了一个三角形*/
+    border-color: transparent transparent #DDE2E5 transparent;
+    position:absolute;
+    top: 19%;
+}
+.explain .triangle.optimize{
+    left: 14.5%;
+}
+
+.explain .triangle.normal{
+    left: 64.5%;
+
+}

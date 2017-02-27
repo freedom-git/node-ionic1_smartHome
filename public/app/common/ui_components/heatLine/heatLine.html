@@ -1,0 +1,60 @@
+    <!--曲线容器-->
+    <div class="heat-line">
+
+        <div class="hl_head">
+            <!-- 标题-->
+            <div class="title">
+                我的专属烹饪曲线
+            </div>
+        </div>
+
+        <div class="hl_body">
+            <!-- 工作阶段-->
+            <div>
+                <div class="row stages" >
+                    <div class="col col-20 stage"
+                         ng-repeat="item in stages track by $index"
+                         ng-class="item.status" >
+                        <span ng-bind="item.name"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 曲线-->
+            <div id="main" style="height:200px;border:0px solid transparent;padding:0 10px 0 10px;"></div>
+        </div>
+
+        <div class="hl_foot">
+            <!-- 图例-->
+            <div class="row legends">
+                <div class="col col-50"
+                     ng-repeat="item in heatLine.legend.data.cur track by $index"
+                     ng-class="item.type == 'optimize'?'optimize':'normal'"
+                     ng-click="heatLine.legend.click(item)">
+
+                    <span class="legend" ></span>
+                    <span class="text" ng-bind="item.name"></span>
+                </div>
+            </div>
+
+            <!-- 说明 -->
+            <div class="explain">
+                <div class="row">
+                    <div class="col box" >
+                        <p ng-bind="heatLine.legend.show.message"></p>
+                        <p>
+                            <span>环境温度:   {{temperature}}摄氏度      &nbsp;&nbsp;</span>
+                            <span>海拔:       {{elevation}}             &nbsp;&nbsp;</span>
+                            <span>电压:       {{voltage}} V                       &nbsp;</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <span class="triangle" ng-class="heatLine.legend.show.type"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

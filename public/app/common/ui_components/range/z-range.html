@@ -1,0 +1,15 @@
+<div class="range range-calm"
+     style="padding:0;!important;margin-left: auto;margin-right: auto;overflow: hidden;position: relative">
+    <ion-scroll id={{rangeId}} on-touch="onOutTouch()" ng-click="addOnClick($event)" ng-init="doInit()"
+                on-drag="onScroll()" on-release="onRelease()" delegate-handle={{'handle'+rangeId}} has-bouncing="false"
+                zooming="false" scrollbar-x="false" scrollbar-y="false" direction="x" style=" position: absolute; z-index:1;display: block;
+   width: 100%;height: 43px;overflow: hidden;background-color: #e42012;opacity:0;
+    ">
+        <div style="width: 188.679245%; height: 43px;  text-align: center;background-color: #69717d;opacity:0.5; ">
+            <div on-touch="onTouch()"
+                 style="width: 6%; height: 43px; margin-left: 47%;background-color: #e6b400;opacity:0.5;"></div>
+        </div>
+    </ion-scroll>
+    <input class="zRangeInput" style="margin:0;!important;padding:0;!important;opacity:1;" type="range" min={{min}}
+           max={{max}} ng-model="value">
+</div>

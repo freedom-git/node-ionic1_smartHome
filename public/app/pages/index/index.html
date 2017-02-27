@@ -1,0 +1,45 @@
+<ion-view id="index" view-title="{{mainService.deviceConfigService.devConfig.deviceName}}" ng-cloak>
+    <ion-content
+            padding="false"
+            has-bouncing="true"
+            scrollbar-y="false"
+            scrollbar-x="false"
+            direction="y">
+    <div class="city">
+        <div class="title">
+            <h2>{{mainService.resourceService.weather.basic.cnty+'・'+mainService.resourceService.weather.basic.city}}</h2>
+            <h3>{{'空气质量：'+mainService.resourceService.weather.aqi.city.aqi+'・'+mainService.resourceService.weather.aqi.city.qlty}}</h3>
+        </div>
+        <div class="date-time">
+            <div class="dmy">
+                <div id="txt">室外实时</div>
+                <div class="date">
+                    {{mainService.resourceService.weather.now.tmp+'℃・'+mainService.resourceService.weather.now.hum+'%・'+mainService.resourceService.weather.now.pres+'pa・'+mainService.resourceService.weather.now.cond.txt+'・体感'+mainService.resourceService.weather.now.fl+'℃'}}
+                </div>
+            </div>
+            <div class="temperature">
+                <p>{{resourceService.airCtrl.temperature.value}}<span>℃</span>
+                    {{resourceService.airCtrl.humidity.value}}<span>%</span></p>
+                <!--<p>室内温度&nbsp;&nbsp;&nbsp;室内湿度</p>-->
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="button-group-navigation">
+        <ul>
+            <li><a on-hold="navHold('music')" class="btn" ng-style="{width:{{(innerWidth-5)/6}}+'px'}"><i class="icon ion-music-note"></i></a></li>
+            <li><a class="btn" ng-style="{width:{{(innerWidth-5)/6}}+'px'}" style="font-size: 2em;max-height: 50px;padding-top: 10px;"><i class="icon ion-ios-snowy"></i></a></li>
+            <li><a class="btn" ng-style="{width:{{(innerWidth-5)/6}}+'px'}"><i class="icon ion-location"></i></a></li>
+            <li><a class="btn" ng-style="{width:{{(innerWidth-5)/6}}+'px'}"><i class="icon ion-android-sync"></i></a></li>
+            <li><a class="btn" ng-style="{width:{{(innerWidth-5)/6}}+'px'}"><i class="icon ion-android-plane"></i></a></li>
+            <li><a class="btn" ng-style="{width:{{(innerWidth-5)/6}}+'px'}" style="margin: 0"><i class="icon ion-android-volume-off"></i></a></li>
+        </ul>
+    </div>
+    <div class="itemContent">
+        <div ng-repeat="item in items" class="itemButton" ng-style="{'background-image':'url(images/{{item.img}})'}" ng-click="itemClick(item.action)"><div class="blackShadow"><p>{{item.text}}</p></div></div>
+    </div>
+    <h3 ng-if="temperature">{{temperature}}</h3>
+    <h3 ng-if="humidity">{{humidity}}</h3>
+        </ion-content>
+</ion-view>
+

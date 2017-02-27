@@ -1,0 +1,131 @@
+/**/
+.timePickerBody{
+    background-color: rgba(0, 0, 0, 0.51);
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    -webkit-transition: .1s opacity linear;
+    transition: .1s opacity linear;
+}
+.timePickerBody .timePickerDialog .icon.ion-ios-clock{
+    font-size: 90px;color: #7ED321;
+}
+.timePickerBody .timePickerDialog .icon.ion-ios-clock:before{
+    /*transform: rotate(90deg);*/
+}
+.timePickerBody .popup-buttons,.popupBody .popup-buttons{
+    padding: 0;
+    min-height: 50px;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    font-size: 1.5em;
+}
+
+.timePickerBody .button.button-full{
+    margin: 0;
+    border-left: 1px solid #dddddd;
+    min-height: 30px;
+    vertical-align: middle;
+
+}
+.timePickerBody .button.button-full .icon,.popupBody  .button.button-full .icon{
+    vertical-align: middle;
+}
+.timePickerDialog{
+    text-align: center;
+}
+.timePickerDialog{
+    margin: auto;
+    width: 260px;
+    height: 325px;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom:0;
+
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
+
+    -webkit-animation-name: superScaleIn;
+    animation-name: superScaleIn;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.timePickerDialog .headerMark{
+    pointer-events: none;
+    width: 260px;
+    height: 78px;
+    position: absolute;
+    top: 122px;
+    background:-moz-linear-gradient(top, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0) 70%);/*Mozilla*/
+    background:-webkit-gradient(linear,0 0,0 70%,from(rgba(0, 0, 0, 0.10)),to(rgba(0, 0, 0, 0)));/*Old gradient for webkit*/
+    background:-webkit-linear-gradient(top,rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0) 70%);/*new gradient for Webkit*/
+    background:-o-linear-gradient(top, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0) 70%); /*Opera11*/
+
+}
+.timePickerDialog .footerMark{
+    pointer-events: none;
+    width: 260px;
+    height: 78px;
+    position: absolute;
+    top: 200px;
+    background:-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.10) 70%);/*Mozilla*/
+    background:-webkit-gradient(linear,0 0,0 70%,from(rgba(0, 0, 0, 0)),to(rgba(0, 0, 0, 0.10)));/*Old gradient for webkit*/
+    background:-webkit-linear-gradient(top,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.10) 70%);/*new gradient for Webkit*/
+    background:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.10) 70%); /*Opera11*/
+
+}
+
+.hourWrapperClass{
+    position: absolute;left: 10%;top:100px;width:30%;height: 150px;text-align: center
+}
+.hourWrapperClass li,.minuteWrapperClass li{
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.4em;
+}
+.minuteWrapperClass{position: absolute;left: 60%;top:100px;width:30%;height: 150px;text-align: center}
+.minuteWrapperClass.toggle-,.hourWrapperClass.toggle-{
+    top:128px;
+}
+.minuteWrapperClass.toggle-1,.hourWrapperClass.toggle-1{
+    top:155px;
+}
+.minuteWrapperClass.toggle-2,.hourWrapperClass.toggle-2{
+    top:207px;
+}
+.hourWrapperClass .fBase,.minuteWrapperClass .fBase{
+    color: rgba(116, 116, 116, 0.71);
+}
+
+.hourWrapperClass .fBase.select,.minuteWrapperClass .fBase.select {
+    color: #30ade9;
+    font-size: 2em;
+}
+.timePickerDialog .button-bar .button{
+    border-radius: 0px;
+    border-color: #ccc;
+    border-width: 0 1 0 0;
+    color: #1FB4FF;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: white;
+
+}
+.timePickerDialog .button-bar .button:last-child{
+    border-bottom-right-radius: 5px;
+    border-right:none ;
+}
+.timePickerDialog .button-bar .button:first-child{
+    border-bottom-left-radius: 5px;
+    border-left: none;
+}
+.timePickerDialog .item.item-toggle{
+    font-size: 1.1em;
+}

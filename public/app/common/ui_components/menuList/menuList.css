@@ -1,0 +1,32 @@
+.favoriteMenu .card {
+    box-shadow: 0 0 0 rgba(0,0,0,.3);
+    margin: 0;
+    border-radius: 0;
+    border: 1px solid rgba(204, 204, 204, 0.27);
+    background-color: #f7fcff;
+    position: relative;
+    text-align: center;
+    width: auto;
+    height: auto;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow: hidden;
+}
+/*.card:active{*/
+/*background-color: rgba(222, 222, 222, 0.5);*/
+/*box-shadow: 0px 0px 3px rgb(24, 163, 255);*/
+/*}*/
+.favoriteMenu .card .menuItemImgOutLine{
+    width: 100px;
+    height: 100px;
+}
+.favoriteMenu .card .menuItemImgInLine{
+    position: absolute; width: 50px;height: 50px;margin:auto;top: 25px; left: 0; right: 0;border-radius: 50%;
+    /*background: url('../images/menuRiceCooking.png')no-repeat;*/
+    /*background-size: 100%;*/
+}
+.favoriteMenu .card.select{
+    /*box-shadow: 0px 0px 30px rgb(4, 134, 255);*/
+    background-color: #e8f6ff;
+}

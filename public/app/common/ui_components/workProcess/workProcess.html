@@ -1,0 +1,35 @@
+<div class="cookerStatus" ng-cloak>
+    <div class="svgBase" ng-if="done">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50%" cy="50%" r="40%" stroke-width="5%" class="processBar1 "></circle>
+            <circle cx="50%" cy="50%" r="35%" stroke-width="5%" class="processBar2 "></circle>
+            <circle cx="50%" cy="50%" r="30%" stroke-width="5%" class="processBar3 "></circle>
+        </svg>
+    </div>
+
+    <div class="cookingImg" ng-if="!done">
+        <img ng-src="{{backgroundPictureUrl}}"/>
+    </div>
+
+    <div ng-if="showCircle">
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50%" cy="50%" r="45%" stroke-width="5%"
+                style="box-shadow:0 10px 5px #000 "></circle>
+        <circle stroke="{{processColor}}"
+                stroke-dasharray="{{850*(1-progress)}} 850" cx="50%" cy="50%"
+                r="45%" stroke-width="5%">
+        </circle>
+    </svg>
+    </div>
+    <div class="cookInfoBody">
+        <p class="cookClass" ng-if="!done">&nbsp;{{textInfo}}&nbsp;</p>
+
+        <h1 class="cookedOk " ng-if="done"><span
+                class="icon ion-android-done"></span></h1>
+        <h4 class="cookingStatus " ng-if="!done">
+            {{message}}<span class="amOrPm">{{subscript}}</span></h4>
+
+        <p class="cookTimeLeft " ng-if="!done">
+            {{subTextInfo}}</p>
+    </div>
+</div>

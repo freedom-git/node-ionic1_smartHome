@@ -1,0 +1,14 @@
+<div ng-class="{'card':hasCard}">
+    <p style="text-align: center;position: relative;margin: 5px 0 0 0;font-size: 1.2em"><span
+            style="position: absolute;left: 5px;color:#9C9C9C;padding:2px 0 0 5px;font-size: 1em">{{name}}</span>
+        {{options[value]}}</p>
+    <div style="padding: 0 {{100/(options.length*2)}}% 0 {{100/(options.length*2)}}%">
+        <z-range z-id="{{name+id}}" z-min="0" z-max="{{options.length-1}}"
+                 z-value="value"></z-range>
+    </div>
+    <div class="row" style="padding: 0 10px 5px 10px">
+        <div ng-repeat="option in options" class="col"
+             style="text-align:center ;font-size: 12px ; color: #9C9C9C">{{option}}
+        </div>
+    </div>
+</div>

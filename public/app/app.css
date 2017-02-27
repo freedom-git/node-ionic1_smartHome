@@ -1,0 +1,17 @@
+@import "pages/index/index.css";
+@import "pages/music/music.css";
+@import "pages/air/air.css";
+@import "pages/light/light.css";
+@import "pages/airConditionRemoteCtrl/airConditionRemoteCtrl.css";
+
+*{margin:0;padding:0;}
+html{
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+@keyframes spin {
+    to { transform: rotate(1turn); }
+}
+.freedomCssComponents-spin {
+    animation: spin 3s infinite linear;
+}
